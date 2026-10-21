@@ -1,4 +1,4 @@
-import type { RiskLevel } from '@swasthyasetu/shared';
+import type { RiskLevel, ClinicalReviewStatus } from '@swasthyasetu/shared';
 
 /**
  * Placeholder types for the pathway engine.
@@ -28,7 +28,7 @@ export interface PathwayDefinition {
   id: string;
   version: string;
   title: string;
-  clinicalReview: 'pending' | 'approved';
+  clinicalReview: ClinicalReviewStatus;
   steps: PathwayStep[];
   rules: PathwayRule[];
 }

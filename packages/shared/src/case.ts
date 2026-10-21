@@ -1,4 +1,5 @@
 import type { RiskLevel } from './risk-levels.js';
+import type { ClinicalReviewStatus } from './clinical-review.js';
 
 export type CaseStatus = 'draft' | 'completed' | 'synced';
 
@@ -13,7 +14,7 @@ export interface Case {
   riskLevel: RiskLevel | null;
   reasonText: string | null;
   actionText: string | null;
-  clinicalReviewStatus: 'pending' | 'approved';
+  clinicalReviewStatus: ClinicalReviewStatus;
   createdBy: string;
   blockId: string;
   districtId: string;

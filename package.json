@@ -3,21 +3,22 @@
   "private": true,
   "packageManager": "pnpm@9.15.4",
   "scripts": {
-    "dev": "pnpm --parallel --filter @swasthyasetu/web --filter @swasthyasetu/api dev",
-    "dev:web": "pnpm --filter @swasthyasetu/web dev",
-    "dev:api": "pnpm --filter @swasthyasetu/api dev",
+    "build:packages": "pnpm --filter @swasthyasetu/shared --filter @swasthyasetu/engine build",
+    "dev": "pnpm build:packages && pnpm --parallel --filter @swasthyasetu/web --filter @swasthyasetu/api dev",
+    "dev:web": "pnpm build:packages && pnpm --filter @swasthyasetu/web dev",
+    "dev:api": "pnpm build:packages && pnpm --filter @swasthyasetu/api dev",
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
-    "typecheck": "pnpm -r typecheck",
-    "test": "pnpm -r test",
+    "typecheck": "pnpm build:packages && pnpm -r typecheck",
+    "test": "pnpm build:packages && pnpm -r test",
     "clean": "pnpm -r clean"
   },
   "devDependencies": {
-    "typescript": "^5.7.0",
-    "eslint": "^9.16.0",
     "@eslint/js": "^9.16.0",
-    "typescript-eslint": "^8.18.0",
+    "eslint": "^9.16.0",
     "eslint-config-prettier": "^9.1.0",
-    "prettier": "^3.4.0"
+    "prettier": "^3.4.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.18.0"
   }
 }

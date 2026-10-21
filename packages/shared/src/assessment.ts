@@ -1,4 +1,5 @@
 import type { RiskLevel } from './risk-levels.js';
+import type { ClinicalReviewStatus } from './clinical-review.js';
 
 export interface Assessment {
   caseId: string;
@@ -8,6 +9,6 @@ export interface Assessment {
   riskLevel: RiskLevel;
   reasonText: string;
   actionText: string;
-  clinicalReviewStatus: 'pending' | 'approved';
+  clinicalReviewStatus: ClinicalReviewStatus;
   completedAt: string;
 }
